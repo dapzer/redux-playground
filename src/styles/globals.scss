@@ -1,0 +1,171 @@
+@import "variables.scss";
+@import "mixins";
+
+:root {
+  --toastify-color-dark: #282f43;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+._next,
+html,
+body,
+body > div:first-of-type {
+  height: 100%;
+}
+
+body {
+  background: $background;
+  background-size: cover;
+}
+
+html {
+  scroll-padding-top: 10px + $headerHeight;
+}
+
+// Scroll
+
+*::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+  height: 6px;
+  cursor: pointer;
+  position: unset;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background: $primary
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: $highlight
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  padding: 72px 0;
+  flex: 1 1 auto;
+
+  @media screen and (max-width: $md) {
+    min-height: 100vh;
+  }
+}
+
+// Default styles
+
+h1 {
+  color: $secondary;
+  font-size: $h1;
+  font-weight: $bold;
+}
+
+h2 {
+  color: $secondary;
+  font-size: $h2;
+  font-weight: $bold;
+}
+
+h3 {
+  color: $secondary;
+  font-size: $h3;
+  font-weight: $medium;
+}
+
+p {
+  color: $text;
+  font-size: $p;
+  font-weight: $medium;
+}
+
+span {
+  color: $text;
+  font-size: $span;
+  font-weight: $light;
+}
+
+a {
+  color: $secondary;
+  font-size: $p;
+  font-weight: $regular;
+  cursor: pointer;
+  text-decoration: none;
+  height: fit-content;
+  line-height: 0;
+
+  &:hover {
+    color: $highlight;
+  }
+}
+
+input {
+  text-decoration: none;
+  outline: none;
+  background: none;
+  border: 1px solid #fff;
+  padding: 10px 15px;
+  color: $secondary;
+  font-size: $p;
+  border-radius: 5px;
+}
+
+.container {
+  width: 100%;
+  max-width: $container;
+  padding: 0 $indent;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  color: $text;
+  font-size: $p;
+}
+
+button {
+  border: none;
+  background: unset;
+  font-size: $p;
+  cursor: pointer;
+  color: $secondary;
+  padding: 10px 20px;
+  border-radius: $borderRadius;
+  border: 1px solid $secondary;
+}
+
+.row {
+  padding-bottom: 50px;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: $borderRadius;
+  border: 1px solid $highlight;
+}
